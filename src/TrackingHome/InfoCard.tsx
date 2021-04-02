@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { useRecoilState } from "recoil";
 
-import { objectData } from "../State/objectData";
 import { fetchData } from "./fetchData";
 import { ErrorMessage } from "../shared/ErrorMessage";
 import { RenderCard } from "./RenderCard";
 import { backupData } from "./orders";
+import { IPackage } from "../shared/Interfaces/IPackage";
 
 export const InfoCard: React.FC = () => {
-  const [trackingData, setData] = useRecoilState(objectData);
+  const [trackingData, setData] = useState<IPackage[]>([]);
   const [status, setStatus] = useState(0);
 
   useEffect(() => {
