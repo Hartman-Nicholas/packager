@@ -1,0 +1,48 @@
+.landing {
+  position: relative;
+  transition: all ease-in-out;
+
+  &-title {
+  }
+
+  &-subtitle {
+  }
+
+  &-btn {
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    font-size: $font-size-p-regular;
+
+    padding: 1rem 0rem 1rem 0rem;
+    background-image: linear-gradient(
+      to right bottom,
+      rgba($color-primary-light, 0.7),
+      rgba($color-primary-dark, 0.7)
+    );
+    border-radius: 8px;
+    @include bs-light;
+
+    &--link {
+      padding: 1.5rem 2.5rem 1.5rem 2.5rem;
+    }
+
+    &:hover {
+      opacity: 0.7;
+      text-decoration: underline;
+      transform: scale(1.1);
+    }
+
+    &:active {
+      transform: translateY(6px);
+    }
+  }
+
+  &-img {
+    margin-top: 1rem;
+    @include respond(tablet) {
+      max-width: 600px;
+    }
+  }
+}

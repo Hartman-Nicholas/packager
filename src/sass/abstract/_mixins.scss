@@ -1,0 +1,77 @@
+@mixin bs {
+  box-shadow: 0 1.5rem 3rem rgba($color-black, 0.3);
+}
+
+@mixin bs-light {
+  box-shadow: 0 1rem 1.5rem rgba($color-black, 0.2);
+}
+
+@mixin bs-tiny {
+  box-shadow: 0 1.5rem 2rem rgba($color-black, 0.2);
+}
+
+@mixin bs-hover {
+  box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+}
+
+@mixin bs-active {
+  box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
+}
+
+@mixin ts-hover {
+  text-shadow: 0.5rem 1rem 2rem rgba($color-black, 0.2);
+}
+
+@mixin center-horizontal-vertical {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// MEDIA QUERY MANAGER
+
+/* 
+0-600px:    Phone
+600 - 900px: Tablet portrait
+900 - 1200px: Tablet landscape
+1200 - 1800 Desktop styles
+1800px +: big desktop styles
+*/
+
+/* breakpoint argument choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+*/
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == tablet {
+    @media (min-width: 34.375em) {
+      // 550px
+      @content;
+    }
+  }
+
+  @if $breakpoint == tablet-land {
+    @media (min-width: 40.625em) {
+      // 650px
+      @content;
+    }
+  }
+
+  @if $breakpoint == laptop {
+    @media (min-width: 46.875em) {
+      // 750px
+      @content;
+    }
+  }
+
+  @if $breakpoint == big-desktop {
+    @media (min-width: 100em) {
+      // 1600px
+      @content;
+    }
+  }
+}

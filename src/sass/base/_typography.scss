@@ -1,0 +1,34 @@
+body {
+  font-family: $font-face-secondary;
+  font-weight: $font-weight-medium;
+  line-height: 1.7;
+  color: $color-black-onyx;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: $color-black-onyx;
+}
+
+h1 {
+  font-size: $font-size-h1-small;
+}
+
+h2 {
+  font-size: $font-size-h2-regular;
+  font-weight: $font-weight-medium;
+  margin-bottom: 2rem;
+}
+
+h3 {
+  color: $color-grey-dark-1;
+  font-size: $font-size-h3-regular;
+}
+
+p {
+  font-size: $font-size-p-regular;
+}

@@ -1,0 +1,55 @@
+.surveyForm {
+  padding: 2rem;
+  background: $color-white;
+  @include bs;
+
+  @include respond(tablet) {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  &__field:not(:first-child) {
+    margin-top: 1rem;
+  }
+
+  &__required {
+    display: block;
+    color: red;
+    margin-top: 0.5rem;
+    font-size: $font-size-p-tiny;
+  }
+
+  &__submit {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+  }
+
+  input {
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    width: 100%;
+  }
+
+  textarea {
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    width: 100%;
+
+    &::placeholder {
+      font-family: $font-face-secondary;
+    }
+  }
+
+  label {
+    font-family: $font-face-secondary;
+    font-size: $font-size-p-regular;
+  }
+}
+
+.surveyContainer {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}

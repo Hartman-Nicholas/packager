@@ -1,6 +1,6 @@
 import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
 
-import { IGoogleMaps } from "./Interfaces/IGoogleMaps";
+import { IGoogleMaps } from "../../shared/Interfaces/IGoogleMaps";
 import { mapStyles } from "./GoogleMap_style";
 
 const libraries: any = ["places"];
@@ -24,23 +24,16 @@ export const Map: React.FC<IGoogleMaps> = ({ lat, lng, label }) => {
   if (loadError) return <div>Error loading maps</div>;
   if (!isLoaded) return <div>Loading Maps</div>;
 
-  const renderLabel = () => {
-    return `Name:${label.Name}
-    ParcelId: ${label.ParcelId}
-    Sender: ${label.Sender}
-    Status: ${label.Status}`;
-  };
-
   return (
     <div>
       <h1>packager</h1>
       <GoogleMap
         mapContainerStyle={mapContainerStyle}
-        zoom={8}
+        zoom={7}
         center={{ lat, lng }}
         options={options}
       >
-        <Marker position={{ lat, lng }} label={renderLabel()} />
+        <Marker position={{ lat, lng }} label={label} />
       </GoogleMap>
     </div>
   );

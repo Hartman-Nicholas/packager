@@ -1,0 +1,39 @@
+.surveyCard {
+  padding: 1rem;
+  @include bs;
+  background-image: linear-gradient(
+    to right bottom,
+    rgba(216, 226, 220, 0.7),
+    rgba(255, 229, 217, 0.7)
+  );
+  transition: 0.5s ease-in-out;
+  box-shadow: 0 1.5rem 2rem rgba(33, 37, 41, 0.2);
+
+  &:hover {
+    background-color: #ff7096;
+  }
+
+  &__content {
+    font-family: $font-face-secondary;
+    font-weight: $font-weight-regular;
+    background-color: $color-grey-dark-1;
+    color: $color-grey-light-1;
+    padding: 1rem;
+
+    &--title {
+      color: $color-grey-light-1;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+  }
+
+  &__response {
+    position: relative;
+    &--delete {
+      position: absolute;
+      top: 1rem;
+      right: -0.3rem;
+    }
+  }
+}
