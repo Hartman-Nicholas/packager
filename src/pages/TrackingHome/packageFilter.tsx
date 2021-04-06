@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, MouseEvent } from "react";
 import { useRecoilValue, useRecoilState } from "recoil";
 import { userLanguage } from "../../shared/state/userLanguage";
 
@@ -35,7 +35,7 @@ export const PackageFilter: React.FC = () => {
     event.preventDefault();
   };
 
-  const searchFilter = (event: any) => {
+  const searchFilter = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (event.target.value.length > 0 || event.target.value === "") {
       const resetSearchData = [...searchData, ...filterData];
       setSearchFilter(
@@ -51,7 +51,7 @@ export const PackageFilter: React.FC = () => {
     }
   };
 
-  const readyFilter = (event: any) => {
+  const readyFilter = (event: React.ChangeEvent<HTMLInputElement>) => {
     console.log(event.target.checked);
     if (event.target.checked) {
       setRdyFilter(
@@ -70,7 +70,7 @@ export const PackageFilter: React.FC = () => {
     }
   };
 
-  const orderInfoFilter = (event: any) => {
+  const orderInfoFilter = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (event.target.checked) {
       setOrderFilter(
         filterData.filter(
@@ -88,7 +88,7 @@ export const PackageFilter: React.FC = () => {
     }
   };
 
-  const otwFilter = (event: any) => {
+  const otwFilter = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (event.target.checked) {
       setOtwFilter(
         filterData.filter((value: IPackage) => !(value.status === "on-the-way"))
@@ -102,7 +102,7 @@ export const PackageFilter: React.FC = () => {
     }
   };
 
-  const deliveredFilter = (event: any) => {
+  const deliveredFilter = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (event.target.checked) {
       setDeliveredFilter(
         filterData.filter((value: IPackage) => !(value.status === "delivered"))
