@@ -203,7 +203,7 @@ p {
     min-width: 1px; }
 
 .packagesFilter {
-  max-width: 1300px;
+  max-width: 1450px;
   margin-left: auto;
   margin-right: auto; }
   .packagesFilter__subHeading {
@@ -232,7 +232,7 @@ p {
           grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
           row-gap: 1rem;
           column-gap: 3rem;
-          max-width: 1400px; } }
+          max-width: 1450px; } }
       .packagesFilter__form__checkBox input:checked ~ label {
         color: #fff; }
         .packagesFilter__form__checkBox input:checked ~ label:before {
