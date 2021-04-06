@@ -2,7 +2,7 @@ import { WorldMap } from "./WorldMap";
 
 export const TrackingMap: React.FC = () => {
   return (
-    <div>
+    <div className="TrackingMap">
       <WorldMap />
     </div>
   );

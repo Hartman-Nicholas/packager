@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useRecoilState } from "recoil";
 import { userLanguage } from "../../shared/state/userLanguage";
 
-import { enLanding } from "../../assests/info/language/english/enLanding";
-import { swLanding } from "../../assests/info/language/swedish/swLanding";
+import { enLanding } from "../../utils/language/english/enLanding";
+import { swLanding } from "../../utils/language/swedish/swLanding";
 
 import deliveryService from "../../assests/img/undraw_deliveries_131a.svg";
 import { Link } from "react-router-dom";

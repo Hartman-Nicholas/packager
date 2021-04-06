@@ -1,0 +1,9 @@
+.detailedView {
+  padding: 0;
+
+  &__list {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    font-size: $font-size-h2-regular;
+  }
+}

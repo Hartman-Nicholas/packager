@@ -7,5 +7,6 @@ export const swDetailedView = [
     locationName: "Plats: ",
     locationStatus: "Platsstatus: ",
     verification: "Verifikation krävs: ",
+    heading: "Paket Information: ",
   },
 ];

@@ -1,0 +1,30 @@
+.btn {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: none;
+  padding: 1rem;
+  width: 80px;
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+
+  font-size: $font-size-p-regular;
+
+  padding: 1rem 0rem 1rem 0rem;
+  background-image: linear-gradient(
+    to right bottom,
+    rgba($color-primary-light, 0.7),
+    rgba($color-primary-dark, 0.7)
+  );
+  border-radius: 8px;
+  @include bs-light;
+
+  &:hover {
+    opacity: 0.7;
+    text-decoration: underline;
+    transform: scale(1.1);
+  }
+
+  &:active {
+    transform: translateY(6px);
+  }
+}

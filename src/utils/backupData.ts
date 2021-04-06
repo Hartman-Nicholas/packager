@@ -1,4 +1,4 @@
-import { IPackage } from "../../shared/Interfaces/IPackage";
+import { IPackage } from "../types/Interfaces/IPackage";
 
 export const backupData: IPackage[] = [
   {

@@ -1,7 +1,7 @@
 import { selector } from "recoil";
 import axios from "axios";
 import { userDataState } from "../state/userData";
-import { backupData } from "../../assests/info/backupData";
+import { backupData } from "../../utils/backupData";
 
 export const recoilFetch = selector({
   key: "data",

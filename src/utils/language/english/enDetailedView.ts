@@ -7,5 +7,6 @@ export const enDetailedView = [
     locationName: "Location: ",
     locationStatus: "Location Status: ",
     verification: "Verification Required: ",
+    heading: "Package Info: ",
   },
 ];

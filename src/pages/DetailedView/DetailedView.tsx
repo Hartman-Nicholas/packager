@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import { useRecoilState } from "recoil";
 import { userLanguage } from "../../shared/state/userLanguage";
 
-import { enDetailedView } from "../../assests/info/language/english/enDetailedView";
-import { swDetailedView } from "../../assests/info/language/swedish/swDetailedView";
-import { ILinkProps } from "../../shared/Interfaces/ILinkProps";
+import { enDetailedView } from "../../utils/language/english/enDetailedView";
+import { swDetailedView } from "../../utils/language/swedish/swDetailedView";
+import { ILinkProps } from "../../types/Interfaces/ILinkProps";
 import { Map } from "./GoogleMaps";
 
 export const DetailedView: React.FC<ILinkProps> = (props: ILinkProps) => {
@@ -18,6 +18,7 @@ export const DetailedView: React.FC<ILinkProps> = (props: ILinkProps) => {
       locationName,
       locationStatus,
       verification,
+      heading,
     },
     setLanguage,
   ] = useState(enDetailedView[0]);
@@ -31,54 +32,74 @@ export const DetailedView: React.FC<ILinkProps> = (props: ILinkProps) => {
   }, [setLanguage, language]);
 
   const { data } = props.location.state.fromNotifications;
+
   const dateString = data.last_updated.substring(0, 10);
   const timeString = data.last_updated.substring(11, 16);
   const etaDateString = data.eta.substring(0, 10);
   const etaTimeString = data.eta.substring(11, 16);
 
   return (
-    <section>
-      <h1>Detailed View</h1>
-      <ul>
-        <li>
+    <section className="detailedView">
+      <h1 className="detailedView--heading">{heading}</h1>
+      <ul className="detailedView__list">
+        <li className="detailedView__list--item">
           {parcel}
           {data.parcel_id}
         </li>
-        <li>
+        <li className="detailedView__list--item">
           {sender}
           {data.sender}
         </li>
-        <li>
+        <li className="detailedView__list--item">
           {status}
           {data.status}
         </li>
-        <li>
+        <li className="detailedView__list--item">
           {locationName}
           {data.location_name}
         </li>
-        <li>
-          {locationStatus}
-          {data.location_status_ok}
-        </li>
-        <li>
-          {verification}
-          {data.verification_required}
-        </li>
+        {language === "EN" && (
+          <li className="detailedView__list--item">
+            {locationStatus}
+            {data.location_status_ok ? "Okay" : "Not Okay"}
+          </li>
+        )}
+        {language === "SW" && (
+          <li className="detailedView__list--item">
+            {locationStatus}
+            {data.location_status_ok ? "Okej" : "Inte okej"}
+          </li>
+        )}
+        {language === "EN" && (
+          <li className="detailedView__list--item">
+            {verification}
+            {data.verification_required ? "Yes" : "No"}
+          </li>
+        )}
+        {language === "SW" && (
+          <li className="detailedView__list--item">
+            {verification}
+            {data.verification_required ? "Ja" : "Nej"}
+          </li>
+        )}
 
-        <li>
+        <li className="detailedView__list--item">
           ETA: {etaDateString} @ {etaTimeString}
         </li>
-        <li>
+        <li className="detailedView__list--item">
           {update} {dateString} @ {timeString}
         </li>
       </ul>
+
+      <button className="btn" onClick={() => props.history.goBack()}>
+        back
+      </button>
 
       <Map
         lat={data.location_coordinate_latitude}
         lng={data.location_coordinate_longitude}
         label={data.location_name}
       />
-      <button onClick={() => props.history.goBack()}>back</button>
     </section>
   );
 };

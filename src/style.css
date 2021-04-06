@@ -75,12 +75,36 @@ h2 {
   font-weight: 400;
   margin-bottom: 2rem; }
 
+.worldMap__title {
+  margin-top: 2rem;
+  text-align: center; }
+
 h3 {
   color: #333;
   font-size: 1.8rem; }
 
 p {
   font-size: 1.6rem; }
+
+.btn {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: none;
+  padding: 1rem;
+  width: 80px;
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+  font-size: 1.6rem;
+  padding: 1rem 0rem 1rem 0rem;
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.7), rgba(40, 180, 133, 0.7));
+  border-radius: 8px;
+  box-shadow: 0 1rem 1.5rem rgba(33, 37, 41, 0.2); }
+  .btn:hover {
+    opacity: 0.7;
+    text-decoration: underline;
+    transform: scale(1.1); }
+  .btn:active {
+    transform: translateY(6px); }
 
 .footer {
   background-image: linear-gradient(to left top, rgba(108, 99, 255, 0.7), rgba(46, 191, 165, 0.7));
@@ -138,8 +162,8 @@ p {
     font-size: 1.6rem; }
   .header__img {
     position: absolute;
-    right: 10px;
-    top: 10px;
+    right: 14px;
+    top: 14px;
     width: 30px;
     cursor: pointer;
     border-radius: 4px;
@@ -149,71 +173,6 @@ p {
       opacity: 0.7; }
     .header__img:active {
       transform: translateY(4px); }
-
-.surveyCard {
-  padding: 1rem;
-  box-shadow: 0 1.5rem 3rem rgba(33, 37, 41, 0.3);
-  background-image: linear-gradient(to right bottom, rgba(216, 226, 220, 0.7), rgba(255, 229, 217, 0.7));
-  transition: 0.5s ease-in-out;
-  box-shadow: 0 1.5rem 2rem rgba(33, 37, 41, 0.2); }
-  .surveyCard:hover {
-    background-color: #ff7096; }
-  .surveyCard__content {
-    font-family: "Lato", sans-serif;
-    font-weight: 300;
-    background-color: #333;
-    color: #f7f7f7;
-    padding: 1rem; }
-    .surveyCard__content--title {
-      color: #f7f7f7;
-      margin-bottom: 0.5rem;
-      text-transform: uppercase;
-      letter-spacing: 1px; }
-  .surveyCard__response {
-    position: relative; }
-    .surveyCard__response--delete {
-      position: absolute;
-      top: 1rem;
-      right: -0.3rem; }
-
-.surveyForm {
-  padding: 2rem;
-  background: #fff;
-  box-shadow: 0 1.5rem 3rem rgba(33, 37, 41, 0.3); }
-  @media (min-width: 34.375em) {
-    .surveyForm {
-      max-width: 700px;
-      margin: 0 auto; } }
-  .surveyForm__field:not(:first-child) {
-    margin-top: 1rem; }
-  .surveyForm__required {
-    display: block;
-    color: red;
-    margin-top: 0.5rem;
-    font-size: 1.4rem; }
-  .surveyForm__submit {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 1.5rem;
-    margin-left: 1.5rem;
-    margin-right: 1.5rem; }
-  .surveyForm input {
-    margin-top: 0.5rem;
-    padding: 0.5rem;
-    width: 100%; }
-  .surveyForm textarea {
-    margin-top: 0.5rem;
-    padding: 0.5rem;
-    width: 100%; }
-    .surveyForm textarea::placeholder {
-      font-family: "Lato", sans-serif; }
-  .surveyForm label {
-    font-family: "Lato", sans-serif;
-    font-size: 1.6rem; }
-
-.surveyContainer {
-  padding-top: 3rem;
-  padding-bottom: 3rem; }
 
 .packageCard {
   padding: 1rem;
@@ -243,30 +202,125 @@ p {
     width: 100%;
     min-width: 1px; }
 
-.packages {
+.packagesFilter {
   max-width: 1300px;
   margin-left: auto;
   margin-right: auto; }
-  .packages__form {
-    margin-bottom: 3rem;
+  .packagesFilter__subHeading {
+    padding-top: 1rem;
+    margin-bottom: 1rem;
+    font-size: 1.6rem; }
+  .packagesFilter__form {
+    margin-bottom: 1.5rem;
     font-size: 1.6rem; }
     @media (min-width: 34.375em) {
-      .packages__form {
+      .packagesFilter__form {
         text-align: left; } }
-    .packages__form--input {
+    .packagesFilter__form--input {
       width: 220px;
       font-size: 1.6rem;
       padding-top: 0.5rem;
       padding-bottom: 0.5rem;
       padding-left: 0.5rem;
       font-family: "Lato", sans-serif; }
-  .packages__grid {
+    .packagesFilter__form__checkBox {
+      display: grid;
+      font-size: 1.6rem;
+      font-weight: 400; }
+      @media (min-width: 34.375em) {
+        .packagesFilter__form__checkBox {
+          grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+          row-gap: 1rem;
+          column-gap: 3rem;
+          max-width: 1400px; } }
+      .packagesFilter__form__checkBox input:checked ~ label {
+        color: #fff; }
+        .packagesFilter__form__checkBox input:checked ~ label:before {
+          transform: translate(-50%, -50%) scale3d(56, 56, 1);
+          opacity: 1; }
+        .packagesFilter__form__checkBox input:checked ~ label:after {
+          background-color: #54e0c7;
+          border-color: #54e0c7; }
+      .packagesFilter__form__checkBox input {
+        width: 32px;
+        height: 32px;
+        order: 1;
+        z-index: 2;
+        position: absolute;
+        right: 30px;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        visibility: hidden; }
+      .packagesFilter__form__checkBox--wrapper {
+        background-color: #fff;
+        display: block;
+        margin: 10px 0;
+        position: relative; }
+        .packagesFilter__form__checkBox--wrapper label {
+          padding: 12px 30px;
+          width: 100%;
+          display: block;
+          text-align: left;
+          color: #3c454c;
+          cursor: pointer;
+          position: relative;
+          z-index: 2;
+          transition: color 200ms ease-in;
+          overflow: hidden;
+          box-shadow: 0 1rem 1.5rem rgba(33, 37, 41, 0.2);
+          border-radius: 6px; }
+          .packagesFilter__form__checkBox--wrapper label:before {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            content: "";
+            background-color: #5562eb;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%) scale3d(1, 1, 1);
+            transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+            opacity: 0;
+            z-index: -1; }
+          .packagesFilter__form__checkBox--wrapper label:after {
+            width: 32px;
+            height: 32px;
+            content: "";
+            border: 2px solid #d1d7dc;
+            background-color: #fff;
+            background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.414 11L4 12.414l5.414 5.414L20.828 6.414 19.414 5l-10 10z' fill='%23fff' fill-rule='nonzero'/%3E%3C/svg%3E ");
+            background-repeat: no-repeat;
+            background-position: 2px 3px;
+            border-radius: 50%;
+            z-index: 2;
+            position: absolute;
+            right: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            transition: all 200ms ease-in; }
+      .packagesFilter__form__checkBox--label {
+        display: block; }
+  .packagesFilter__grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     grid-gap: 3rem; }
     @media (min-width: 46.875em) {
-      .packages__grid {
+      .packagesFilter__grid {
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); } }
+
+.googleMap__detailedView {
+  overflow: hidden;
+  margin-bottom: 6rem;
+  margin-top: 1rem;
+  box-shadow: 0 1.5rem 3rem rgba(33, 37, 41, 0.6); }
+
+.googleMap__worldView {
+  overflow: hidden;
+  margin-bottom: 6rem;
+  margin-top: 1rem;
+  box-shadow: 0 1.5rem 3rem rgba(33, 37, 41, 0.6); }
 
 .landing {
   position: relative;
@@ -293,3 +347,10 @@ p {
     @media (min-width: 34.375em) {
       .landing-img {
         max-width: 600px; } }
+
+.detailedView {
+  padding: 0; }
+  .detailedView__list {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    font-size: 2rem; }

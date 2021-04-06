@@ -1,4 +1,4 @@
-import { ErrorInfo } from "../assests/info/ErrorInfo";
+import { ErrorInfo } from "../utils/ErrorInfo";
 import { Link } from "react-router-dom";
 
 export const ErrorMessage = ({ error, resetErrorBoundary }: any) => {

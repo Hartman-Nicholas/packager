@@ -3,9 +3,9 @@ import { useRecoilState } from "recoil";
 import { userLanguage } from "../../shared/state/userLanguage";
 import { Link } from "react-router-dom";
 
-import { IPackage } from "../../shared/Interfaces/IPackage";
-import { enRenderCard } from "../../assests/info/language/english/enRenderCard";
-import { swRenderCard } from "../../assests/info/language/swedish/swRenderCard";
+import { IPackage } from "../../types/Interfaces/IPackage";
+import { enRenderCard } from "../../utils/language/english/enRenderCard";
+import { swRenderCard } from "../../utils/language/swedish/swRenderCard";
 
 export const RenderCard: React.FC<{ data: IPackage[] }> = ({ data }) => {
   const [language] = useRecoilState(userLanguage);

@@ -7,7 +7,7 @@ import { Landing } from "./pages/Landing";
 import { TrackingHome } from "./pages/TrackingHome";
 import { DetailedView } from "./pages/DetailedView";
 import { TrackingMap } from "./pages/TrackingMap";
-import { TrackingSearch } from "./pages/TrackingSearch";
+
 import { Header } from "./shared/Header";
 import { Footer } from "./shared/Footer";
 import { ErrorMessage } from "./shared/ErrorMessage";
@@ -26,11 +26,6 @@ export const App: React.FC = () => {
                 <Route path="/detailedView" exact component={DetailedView} />
 
                 <Route path="/trackingMap" exact component={TrackingMap} />
-                <Route
-                  path="/trackingSearch"
-                  exact
-                  component={TrackingSearch}
-                />
               </Switch>
               <Footer />
             </Suspense>

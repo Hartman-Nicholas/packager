@@ -1,5 +1,5 @@
 import { atom } from "recoil";
-import { IPackage } from "../Interfaces/IPackage";
+import { IPackage } from "../../types/Interfaces/IPackage";
 
 export const userDataState = atom({
   key: "userData",

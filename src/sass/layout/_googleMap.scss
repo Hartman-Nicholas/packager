@@ -1,0 +1,15 @@
+.googleMap {
+  &__detailedView {
+    overflow: hidden;
+    margin-bottom: 6rem;
+    margin-top: 1rem;
+    @include bs-dark;
+  }
+
+  &__worldView {
+    overflow: hidden;
+    margin-bottom: 6rem;
+    margin-top: 1rem;
+    @include bs-dark;
+  }
+}

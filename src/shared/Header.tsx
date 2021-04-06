@@ -5,8 +5,8 @@ import { useRecoilValue } from "recoil";
 
 import { recoilFetch } from "../shared/state/recoilFetch";
 import { userLanguage } from "./state/userLanguage";
-import { enHeader } from "../assests/info/language/english/enHeader";
-import { swHeader } from "../assests/info/language/swedish/swHeader";
+import { enHeader } from "../utils/language/english/enHeader";
+import { swHeader } from "../utils/language/swedish/swHeader";
 import britishFlag from "../assests/img/BritishFlag.png";
 import swedenFlag from "../assests/img/SwedenFlag.png";
 
