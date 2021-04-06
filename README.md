@@ -39,6 +39,8 @@ As there are many different hosting sites each with their own deployment methods
 
 Due to time constraints there are several areas of the application that can reviewed and possibly refactored and improved.
 
+- Currently you just enter the page and the User Data loads as it is typed to a single user. In the real application on the home screen you would have a user login field that would be linked to a dataBase and user authentication. Once the user is Authenticate their particular data would be fetched and displayed. The recoil fetch argument would need to be refactored to query the database correctly to return the authenticated user data. I have designed it this way without a mock login so that the majority of coding is designed around valid data being fetched and not filtering the data which in the real application would not be a valid approach. As such it makes the current code scalable to an actual application.
+
 - Design scalability, most of the project has been designed with scalability in mind, however the following definitely would need to be considered and implemented
   - Pagination to limit the amount of data displayed and fetched on the home page.
   - The search and filter methods would need to be changed to query the server instead of filtering the fetched data as you are only receiving a sample of the data and not the complete results.
