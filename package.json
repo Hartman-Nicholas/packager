@@ -1,5 +1,6 @@
 {
   "name": "packagetracking",
+  "homepage": "https://hartofcode.com/projects/packager",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
