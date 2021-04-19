@@ -16,7 +16,7 @@ export const App: React.FC = () => {
   return (
     <div className="container">
       <RecoilRoot>
-        <BrowserRouter>
+        <BrowserRouter basename={"/projects/packager"}>
           <ErrorBoundary FallbackComponent={ErrorMessage}>
             <Suspense fallback={<div>loading...</div>}>
               <Header />
